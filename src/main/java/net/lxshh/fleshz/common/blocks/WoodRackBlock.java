@@ -40,7 +40,7 @@ public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterlogg
     public static final VoxelShape SHAPE_WEST = Block.box(13, 13, 0, 16, 16, 16);;
     public static final VoxelShape SHAPE_EAST = Block.box(0, 13, 0, 3, 16, 16); ;
 
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public WoodRackBlock(Properties pProperties) {

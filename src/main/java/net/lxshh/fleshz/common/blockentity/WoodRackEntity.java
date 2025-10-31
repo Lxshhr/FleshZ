@@ -172,4 +172,8 @@ public class WoodRackEntity extends BlockEntity {
             Containers.dropItemStack(this.level, pos.getX(), pos.getY(), pos.getZ(), stack);
         }
     }
+
+    public boolean isEmpty() {
+        return this.getStack().isEmpty();
+    }
 }
