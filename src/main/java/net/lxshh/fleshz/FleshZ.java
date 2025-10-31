@@ -5,6 +5,7 @@ import net.lxshh.fleshz.client.ModClient;
 import net.lxshh.fleshz.common.blockentity.ModBlockEntities;
 import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.lxshh.fleshz.common.items.ModItems;
+import net.lxshh.fleshz.common.loot_modifiers.ModLootModifiers;
 import net.lxshh.fleshz.common.recipes.ModRecipes;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,6 +31,8 @@ public class FleshZ
 
         ModRecipes.SERIALIZERS.register(modEventBus);
         ModRecipes.TYPES.register(modEventBus);
+
+        ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);
 
         modEventBus.addListener(this::buildContents);
 

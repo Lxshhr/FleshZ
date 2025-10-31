@@ -1,0 +1,12 @@
+{
+    "type": "fleshz:leather_to_hide",
+    "conditions": [
+        {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+                "type": "#fleshz:leather_to_hide"
+            },
+            "entity": "this"
+        }
+    ]
+}
