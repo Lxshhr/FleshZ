@@ -5,6 +5,8 @@ import net.lxshh.fleshz.common.blockentity.ModBlockEntities;
 import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.lxshh.fleshz.common.items.ModItems;
 import net.lxshh.fleshz.common.recipes.ModRecipes;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -25,5 +27,19 @@ public class FleshZ
 
         ModRecipes.SERIALIZERS.register(modEventBus);
         ModRecipes.TYPES.register(modEventBus);
+
+        modEventBus.addListener(this::buildContents);
+    }
+
+    public void buildContents(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey().equals(CreativeModeTabs.INGREDIENTS)) {
+            event.accept(ModItems.HIDE.get());
+            event.accept(ModItems.PREPARED_HIDE.get());
+            event.accept(ModItems.ROTTEN_LEATHER.get());
+        }
+
+        if (event.getTabKey().equals(CreativeModeTabs.BUILDING_BLOCKS)) {
+            event.accept(ModItems.WOOD_RACK.get());
+        }
     }
 }
