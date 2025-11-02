@@ -1,13 +1,53 @@
 {
     "replace": false,
     "values": [
-        "minecraft:cow",
-        "minecraft:donkey",
-        "minecraft:hoglin",
-        "minecraft:horse",
-        "minecraft:mooshroom",
-        "minecraft:llama",
-        "minecraft:mule",
-        "minecraft:trader_llama"
+        {
+            "id": "minecraft:cow",
+            "required": false
+        },
+        {
+            "id": "minecraft:donkey",
+            "required": false
+        },
+        {
+            "id": "minecraft:hoglin",
+            "required": false
+        },
+        {
+            "id": "minecraft:horse",
+            "required": false
+        },
+        {
+            "id": "minecraft:horse",
+            "required": false
+        },
+        {
+            "id": "minecraft:mooshroom",
+            "required": false
+        },
+        {
+            "id": "minecraft:llama",
+            "required": false
+        },
+        {
+            "id": "minecraft:mule",
+            "required": false
+        },
+        {
+            "id": "minecraft:trader_llama",
+            "required": false
+        },
+        {
+            "id": "naturalist:boar",
+            "required": false
+        },
+        {
+            "id": "minecraft:elephant",
+            "required": false
+        },
+        {
+            "id": "minecraft:rhino",
+            "required": false
+        }
     ]
 }

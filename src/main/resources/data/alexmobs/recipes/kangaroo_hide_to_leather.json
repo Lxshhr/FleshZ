@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "alexsmobs:kangaroo_hide"
+        }
+    },
+    "result": {
+        "item": "fleshz:hide"
+    }
+}
