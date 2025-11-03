@@ -13,3 +13,9 @@ Rottenflesh can be combined to rotten leather which can get dried to get hide.
 
 ## Download
 
+[**CurseForge**](https://www.curseforge.com/minecraft/mc-mods/fleshz-neo-forge)
+
+
+## Credits
+
+- [Globox_Z](https://www.curseforge.com/members/globox_z/projects) - The Original creator of the Fabric mod FleshZ. All credits for the original assets and ideas go to him.
