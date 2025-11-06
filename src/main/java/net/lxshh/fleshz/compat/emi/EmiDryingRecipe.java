@@ -45,18 +45,18 @@ public class EmiDryingRecipe implements EmiRecipe {
 
     @Override
     public int getDisplayWidth() {
-        return 88;
+        return 96;
     }
 
     @Override
     public int getDisplayHeight() {
-        return 32;
+        return 34;
     }
 
     @Override
     public void addWidgets(WidgetHolder widget) {
-        widget.addTexture(EmiTexture.EMPTY_ARROW, 32, 8);
-        widget.addSlot(this.input, 6, 8);
-        widget.addSlot(this.output, 64, 8).recipeContext(this);
+        widget.addTexture(EmiTexture.EMPTY_ARROW, 36, 9);
+        widget.addSlot(this.input, 8, 9);
+        widget.addSlot(this.output, 72, 9).recipeContext(this);
     }
 }

@@ -1,8 +1,6 @@
 package net.lxshh.fleshz.common.items;
 
 import net.lxshh.fleshz.FleshZ;
-import net.lxshh.fleshz.common.blocks.ModBlocks;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
