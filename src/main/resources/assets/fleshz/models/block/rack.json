@@ -1,7 +1,7 @@
 {
+  "credit": "made by Globox_Z",
   "textures": {
-    "particle": "block/oak_planks",
-      "woodrack": "fleshz:block/wood_rack"
+      "particle": "#texture"
   },
   "display": {
       "gui": {
@@ -41,12 +41,12 @@
           "from": [ 0, 13, 0 ], 
           "to": [ 16, 16, 3 ], 
           "faces": {
-              "north": { "texture": "#woodrack", "uv": [ 0, 1, 16, 4 ] },
-              "east": { "texture": "#woodrack", "uv": [ 2, 1, 5, 4 ] },
-              "south": { "texture": "#woodrack", "uv": [ 0, 1, 16, 4 ] },
-              "west": { "texture": "#woodrack", "uv": [ 12, 1, 15, 4 ] },
-              "up": { "texture": "#woodrack", "uv": [ 0, 0, 16, 3 ] },
-              "down": { "texture": "#woodrack", "uv": [ 0, 4, 16, 7 ] }
+              "north": { "texture": "#texture", "uv": [ 0, 1, 16, 4 ] },
+              "east": { "texture": "#texture", "uv": [ 2, 1, 5, 4 ] },
+              "south": { "texture": "#texture", "uv": [ 0, 1, 16, 4 ] },
+              "west": { "texture": "#texture", "uv": [ 12, 1, 15, 4 ] },
+              "up": { "texture": "#texture", "uv": [ 0, 0, 16, 3 ] },
+              "down": { "texture": "#texture", "uv": [ 0, 4, 16, 7 ] }
           }
       }
   ]

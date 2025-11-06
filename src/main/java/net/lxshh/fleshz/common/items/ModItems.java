@@ -14,6 +14,4 @@ public class ModItems {
     public static final RegistryObject<Item> ROTTEN_LEATHER = ITEMS.register("rotten_leather", () ->  new Item(new Item.Properties()));
     public static final RegistryObject<Item> HIDE = ITEMS.register("hide", () ->  new Item(new Item.Properties()));
     public static final RegistryObject<Item> PREPARED_HIDE = ITEMS.register("prepared_hide", () ->  new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> WOOD_RACK = ITEMS.register("wood_rack", () -> new BlockItem(ModBlocks.WOOD_RACK.get(), new Item.Properties()));
 }

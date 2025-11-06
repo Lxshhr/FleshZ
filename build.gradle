@@ -130,6 +130,11 @@ tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
 }
 
+tasks.named('jar', Jar) {
+    exclude 'net/lxshh/datagen/**'
+    exclude    '.cache'
+}
+
 publishing {
     publications {
         register('mavenJava', MavenPublication) {

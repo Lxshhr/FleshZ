@@ -20,7 +20,7 @@ public class EmiIntegration implements EmiPlugin {
     @Override
     public void register(EmiRegistry registry) {
         registry.addCategory(RACK_CATEGORY);
-        registry.addWorkstation(RACK_CATEGORY, EmiStack.of(ModBlocks.WOOD_RACK.get()));
+        registry.addWorkstation(RACK_CATEGORY, EmiStack.of(ModBlocks.OAK_WOOD_RACK.get()));
 
         registry.getRecipeManager().getAllRecipesFor(ModRecipes.RACK_TYPE.get())
                 .forEach(recipe ->

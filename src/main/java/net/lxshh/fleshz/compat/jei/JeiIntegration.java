@@ -38,6 +38,6 @@ public class JeiIntegration implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
-        registry.addRecipeCatalyst(ModBlocks.WOOD_RACK.get(), DryingCategory.DRYING_RACK_TYPE);
+        registry.addRecipeCatalyst(ModBlocks.OAK_WOOD_RACK.get(), DryingCategory.DRYING_RACK_TYPE);
     }
 }

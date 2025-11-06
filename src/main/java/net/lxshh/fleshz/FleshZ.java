@@ -26,12 +26,10 @@ public class FleshZ
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(modEventBus);
-        ModBlocks.BLOCK.register(modEventBus);
+        ModBlocks.BLOCKS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITY.register(modEventBus);
-
         ModRecipes.SERIALIZERS.register(modEventBus);
         ModRecipes.TYPES.register(modEventBus);
-
         ModLootModifiers.LOOT_MODIFIERS.register(modEventBus);
 
         modEventBus.addListener(this::buildContents);
@@ -49,7 +47,15 @@ public class FleshZ
         }
 
         if (event.getTabKey().equals(CreativeModeTabs.BUILDING_BLOCKS)) {
-            event.accept(ModItems.WOOD_RACK.get());
+            event.accept(ModBlocks.OAK_WOOD_RACK.get());
+            event.accept(ModBlocks.SPRUCE_WOOD_RACK.get());
+            event.accept(ModBlocks.BIRCH_WOOD_RACK.get());
+            event.accept(ModBlocks.ACACIA_WOOD_RACK.get());
+            event.accept(ModBlocks.JUNGLE_WOOD_RACK.get());
+            event.accept(ModBlocks.CHERRY_WOOD_RACK.get());
+            event.accept(ModBlocks.DARK_OAK_WOOD_RACK.get());
+            event.accept(ModBlocks.MANGROVE_WOOD_RACK.get());
+            event.accept(ModBlocks.BAMBOO_WOOD_RACK.get());
         }
     }
 }

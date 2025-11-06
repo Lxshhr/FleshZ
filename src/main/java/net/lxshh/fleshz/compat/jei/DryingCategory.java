@@ -9,7 +9,6 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.AbstractRecipeCategory;
 import net.lxshh.fleshz.FleshZ;
-import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.lxshh.fleshz.common.items.ModItems;
 import net.lxshh.fleshz.common.recipes.RackRecipe;
 import net.minecraft.network.chat.Component;
