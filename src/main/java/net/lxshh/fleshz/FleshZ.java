@@ -7,10 +7,12 @@ import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.lxshh.fleshz.common.items.ModItems;
 import net.lxshh.fleshz.common.loot_modifiers.ModLootModifiers;
 import net.lxshh.fleshz.common.recipes.ModRecipes;
+import net.lxshh.fleshz.compat.everycomp.WoodGoodIntegration;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -34,6 +36,8 @@ public class FleshZ
 
         modEventBus.addListener(this::buildContents);
 
+        everyCompatModule();
+
         if (FMLEnvironment.dist == Dist.CLIENT) {
             ModClient.init();
         }
@@ -56,6 +60,18 @@ public class FleshZ
             event.accept(ModBlocks.DARK_OAK_WOOD_RACK.get());
             event.accept(ModBlocks.MANGROVE_WOOD_RACK.get());
             event.accept(ModBlocks.BAMBOO_WOOD_RACK.get());
+        }
+    }
+
+    private static void everyCompatModule() {
+        try {
+            if (ModList.get().isLoaded("everycomp")) {
+                WoodGoodIntegration.init();
+            } else {
+                LOGGER.info("EveryCompat module is not loaded");
+            }
+        } catch (Exception e) {
+            LOGGER.error("Failed to start EveryComp module", e);
         }
     }
 }

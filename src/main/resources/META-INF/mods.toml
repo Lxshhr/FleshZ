@@ -24,3 +24,27 @@ issueTrackerURL="https://github.com/Lxshhr/FleshZ/issues"
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="emi"
+    mandatory=false
+    versionRange="${emi_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="jei"
+    mandatory=false
+    versionRange="${jei_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="everycomp"
+    mandatory=false
+    versionRange="${ec_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="moonlight"
+    mandatory=false
+    versionRange="${moonlight_version_range}"
+    ordering="NONE"
+    side="BOTH"
