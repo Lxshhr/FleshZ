@@ -15,9 +15,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.level.block.Block;
 
 import java.util.List;
 
@@ -44,11 +44,11 @@ public class JeiIntegration implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
-        addRecipeCatalyst(registry, ModTags.Blocks.RACKS, DryingCategory.DRYING_RACK_TYPE);
+        addRecipeCatalyst(registry, ModTags.Items.RACKS, DryingCategory.DRYING_RACK_TYPE);
     }
 
-    private static void addRecipeCatalyst(IRecipeCatalystRegistration registry, TagKey<Block> tag, RecipeType<?> recipeType) {
-        List<Block> tagBlocks = BuiltInRegistries.BLOCK.getOrCreateTag(tag).stream().map(Holder::value).toList();
-        tagBlocks.forEach(block -> registry.addRecipeCatalyst(new ItemStack(block.asItem()), recipeType));
+    private static void addRecipeCatalyst(IRecipeCatalystRegistration registry, TagKey<Item> tag, RecipeType<?> recipeType) {
+        List<Item> tagItems = BuiltInRegistries.ITEM.getOrCreateTag(tag).stream().map(Holder::value).toList();
+        tagItems.forEach(item -> registry.addRecipeCatalyst(new ItemStack(item), recipeType));
     }
 }

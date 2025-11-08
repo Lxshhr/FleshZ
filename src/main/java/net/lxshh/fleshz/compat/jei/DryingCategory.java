@@ -22,7 +22,7 @@ public class DryingCategory extends AbstractRecipeCategory<RackRecipe> {
     private final IDrawable slot;
 
     public DryingCategory(IGuiHelper helper) {
-        super(DRYING_RACK_TYPE, Component.translatable("jei.category.drying"), helper.createDrawableItemLike(ModItems.ROTTEN_LEATHER.get()), 88, 32);
+        super(DRYING_RACK_TYPE, Component.translatable("jei.category.fleshz.drying"), helper.createDrawableItemLike(ModItems.ROTTEN_LEATHER.get()), 88, 32);
         this.slot = helper.getSlotDrawable();
     }
 

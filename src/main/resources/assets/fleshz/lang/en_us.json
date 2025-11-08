@@ -12,6 +12,8 @@
     "block.fleshz.mangrove_wood_rack": "Mangrove Wood Rack",
     "block.fleshz.bamboo_wood_rack": "Bamboo Wood Rack",
 
-    "jei.category.drying": "Rack Drying",
-    "emi.category.fleshz.rack": "Rack Drying"
+    "jei.category.fleshz.drying": "Rack Drying",
+    "emi.category.fleshz.rack": "Rack Drying",
+    "tag.item.fleshz.racks": "Wooden Racks",
+    "tag.block.fleshz.racks": "Wooden Racks"
 }
