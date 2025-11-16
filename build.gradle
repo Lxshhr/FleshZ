@@ -111,7 +111,7 @@ dependencies {
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
     var replaceProperties = [
             minecraft_version      : libs.versions.minecraft.get(),
-            minecraft_version_range: libs.versions.minecraft.get(),
+            minecraft_version_range: "[${libs.versions.minecraft.get()}]",
             neo_version            : libs.versions.neoForge.get(),
             loader_version_range   : "[1,)",
             mod_id                 : mod_id,
@@ -119,7 +119,10 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_license            : mod_license,
             mod_version            : mod_version,
             mod_authors            : mod_authors,
-            mod_description        : mod_description
+            mod_description        : mod_description,
+            emi_version_range      : "[${libs.versions.emi.get()},)",
+            jei_version_range      : "[${libs.versions.jei.get()},)",
+            ec_version_range       : "[${libs.versions.ec.get()},)"
     ]
     inputs.properties replaceProperties
     expand replaceProperties
@@ -131,6 +134,11 @@ neoForge.ideSyncTask generateModMetadata
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+tasks.named('jar', Jar) {
+    exclude 'net/lxshh/datagen/**'
+    exclude    '.cache'
 }
 
 idea {

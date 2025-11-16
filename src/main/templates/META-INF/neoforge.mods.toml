@@ -4,15 +4,15 @@ license="${mod_license}"
 issueTrackerURL="https://github.com/Lxshhr/FleshZ/issues"
 
 [[mods]] 
-modId="${mod_id}" 
-version="${mod_version}" 
-displayName="${mod_name}" 
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
 displayURL="https://github.com/Lxshhr/FleshZ/issues"
 logoFile="icon.png"
 authors="${mod_authors}"
 description='''${mod_description}'''
 
-[[dependencies.${mod_id}]] #optional
+[[dependencies.${mod_id}]]
     modId="neoforge" 
     type="required" 
     versionRange="[${neo_version},)" 
@@ -23,5 +23,26 @@ description='''${mod_description}'''
     modId="minecraft"
     type="required"
     versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="emi"
+    type="optional"
+    versionRange="${emi_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="jei"
+    type="optional"
+    versionRange="${jei_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="everycomp"
+    type="optional"
+    versionRange="${ec_version_range}"
     ordering="NONE"
     side="BOTH"
