@@ -20,9 +20,9 @@ build
 # other
 eclipse
 run
+runs
 run-data
 src/test
 src/generated
 
-# Files from Forge MDK
-forge*changelog.txt
+repo

@@ -1,15 +1,11 @@
 package net.lxshh.fleshz.client;
 
 import net.lxshh.fleshz.common.blockentity.ModBlockEntities;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 public class ModClient {
-
-    public static void init() {
-        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+    public static void init(IEventBus modEventBus) {
         modEventBus.addListener(ModClient::registerBlockRenderers);
     }
 

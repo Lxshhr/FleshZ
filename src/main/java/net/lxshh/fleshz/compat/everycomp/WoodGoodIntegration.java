@@ -1,7 +1,7 @@
 package net.lxshh.fleshz.compat.everycomp;
 
 import net.lxshh.fleshz.FleshZ;
-import net.mehvahdjukaar.every_compat.api.EveryCompatAPI;
+import net.mehvahdjukaar.every_compat.api.example.EveryCompatAPI;
 
 public class WoodGoodIntegration {
     public static void init() {

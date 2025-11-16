@@ -1,16 +1,18 @@
 package net.lxshh.fleshz.datagen;
 
 import net.lxshh.fleshz.common.blocks.ModBlocks;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BlockLootTableProvider extends BlockLootSubProvider {
-    protected BlockLootTableProvider() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    public BlockLootTableProvider(HolderLookup.Provider registries) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
     }
 
     @Override
@@ -28,6 +30,8 @@ public class BlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return ModBlocks.BLOCKS.getEntries().stream()
+                .map(DeferredHolder::get)
+                .collect(Collectors.toSet());
     }
 }

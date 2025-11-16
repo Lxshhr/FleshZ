@@ -7,20 +7,18 @@ import net.lxshh.fleshz.common.blockentity.WoodRackEntity;
 import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.lxshh.fleshz.common.blocks.WoodRackBlock;
 import net.mehvahdjukaar.every_compat.EveryCompat;
-import net.mehvahdjukaar.every_compat.api.PaletteStrategies;
 import net.mehvahdjukaar.every_compat.api.SimpleEntrySet;
 import net.mehvahdjukaar.every_compat.api.SimpleModule;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
 import net.mehvahdjukaar.moonlight.api.set.wood.VanillaWoodTypes;
 import net.mehvahdjukaar.moonlight.api.set.wood.WoodType;
-import net.mehvahdjukaar.moonlight.api.util.Utils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class WoodGood extends SimpleModule {
 
@@ -31,7 +29,7 @@ public class WoodGood extends SimpleModule {
 
         this.woodRack = SimpleEntrySet.builder(WoodType.class, "wood_rack",
                         ModBlocks.OAK_WOOD_RACK, () -> VanillaWoodTypes.OAK,
-                        w -> new WoodRackBlock(BlockBehaviour.Properties.copy(w.planks).strength(0.25F, 0.5F).noOcclusion())
+                        w -> new WoodRackBlock(BlockBehaviour.Properties.ofFullCopy(w.planks).strength(0.25F, 0.5F).noOcclusion())
                 )
                 .requiresChildren("planks")
                 .setTabKey(CreativeModeTabs.BUILDING_BLOCKS)
@@ -52,4 +50,5 @@ public class WoodGood extends SimpleModule {
         super.registerBlockEntityRenderers(event);
         event.register(woodRack.getTile(WoodRackEntity.class), c -> new WoodRackRenderer());
     }
+
 }

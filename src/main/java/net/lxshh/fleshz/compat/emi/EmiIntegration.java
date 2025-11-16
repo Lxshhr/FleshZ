@@ -12,7 +12,6 @@ import net.lxshh.fleshz.common.items.ModItems;
 import net.lxshh.fleshz.common.recipes.ModRecipes;
 import net.minecraft.resources.ResourceLocation;
 
-
 @EmiEntrypoint
 public class EmiIntegration implements EmiPlugin {
 
@@ -25,7 +24,7 @@ public class EmiIntegration implements EmiPlugin {
 
         registry.getRecipeManager().getAllRecipesFor(ModRecipes.RACK_TYPE.get())
                 .forEach(recipe ->
-                        registry.addRecipe(new EmiDryingRecipe(recipe.getId(), recipe))
+                        registry.addRecipe(new EmiDryingRecipe(recipe.id(), recipe.value()))
                 );
     }
 }

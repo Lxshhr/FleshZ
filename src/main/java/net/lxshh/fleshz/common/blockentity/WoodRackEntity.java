@@ -3,22 +3,17 @@ package net.lxshh.fleshz.common.blockentity;
 import net.lxshh.fleshz.common.recipes.ModRecipes;
 import net.lxshh.fleshz.common.recipes.RackRecipe;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Containers;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 import java.util.Optional;
 
@@ -41,46 +36,24 @@ public class WoodRackEntity extends BlockEntity {
         }
     };
 
-    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-
     public WoodRackEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.WOOD_RACK_ENTITY.get(), pPos, pBlockState);
     }
 
     @Override
-    public void onLoad() {
-        super.onLoad();
-        lazyItemHandler = LazyOptional.of(() -> itemHandler);
-    }
-
-    @Override
-    public void invalidateCaps() {
-        super.invalidateCaps();
-        lazyItemHandler.invalidate();
-    }
-
-    @Override
-    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
-        }
-        return super.getCapability(cap, side);
-    }
-
-    @Override
-    protected void saveAdditional(CompoundTag tag) {
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
         tag.putInt("drying_time", dryingTime);
         tag.putInt("process_time", processTime);
-        tag.put("inventory", itemHandler.serializeNBT());
-        super.saveAdditional(tag);
+        tag.put("inventory", itemHandler.serializeNBT(provider));
+        super.saveAdditional(tag, provider);
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadAdditional(tag, provider);
         this.dryingTime = tag.getInt("drying_time");
         this.processTime = tag.getInt("process_time");
-        itemHandler.deserializeNBT(tag.getCompound("inventory"));
+        itemHandler.deserializeNBT(provider, tag.getCompound("inventory"));
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, WoodRackEntity blockEntity) {
@@ -91,9 +64,9 @@ public class WoodRackEntity extends BlockEntity {
             return;
         }
 
-        Optional<RackRecipe> recipe = blockEntity.getRecipe();
+        Optional<RecipeHolder<RackRecipe>> recipe = blockEntity.getRecipe();
         if (recipe.isPresent()) {
-            blockEntity.processRecipe(recipe.get());
+            blockEntity.processRecipe(recipe.get().value());
         } else {
             blockEntity.resetProgress();
         }
@@ -103,11 +76,11 @@ public class WoodRackEntity extends BlockEntity {
         return !itemHandler.getStackInSlot(0).isEmpty();
     }
 
-    private Optional<RackRecipe> getRecipe() {
+    private Optional<RecipeHolder<RackRecipe>> getRecipe() {
         if (this.level == null) return Optional.empty();
 
         ItemStack inputStack = itemHandler.getStackInSlot(0);
-        SimpleContainer recipeInput = new SimpleContainer(inputStack);
+        SingleRecipeInput recipeInput = new SingleRecipeInput(inputStack);
 
         return this.level.getRecipeManager().getRecipeFor(
                 ModRecipes.RACK_TYPE.get(),
@@ -129,7 +102,7 @@ public class WoodRackEntity extends BlockEntity {
         if (this.level == null) return;
 
         ItemStack inputStack = itemHandler.getStackInSlot(0);
-        SimpleContainer recipeInput = new SimpleContainer(inputStack);
+        SingleRecipeInput recipeInput = new SingleRecipeInput(inputStack);
         ItemStack result = recipe.assemble(recipeInput, this.level.registryAccess());
 
         itemHandler.setStackInSlot(0, result);
@@ -160,9 +133,9 @@ public class WoodRackEntity extends BlockEntity {
     }
 
     @Override
-    public CompoundTag getUpdateTag() {
+    public CompoundTag getUpdateTag(HolderLookup.Provider provider) {
         CompoundTag tag = new CompoundTag();
-        saveAdditional(tag);
+        saveAdditional(tag, provider);
         return tag;
     }
 

@@ -1,24 +1,22 @@
 package net.lxshh.fleshz.common.loot_modifiers;
 
-import com.google.common.base.Suppliers;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.lxshh.fleshz.common.items.ModItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.IGlobalLootModifier;
-import net.minecraftforge.common.loot.LootModifier;
-import org.jetbrains.annotations.NotNull;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
+import net.neoforged.neoforge.common.loot.LootModifier;
 
-import java.util.function.Supplier;
+import org.jetbrains.annotations.NotNull;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 
 public class LeatherHideModifier extends LootModifier {
-    public static final Supplier<Codec<LeatherHideModifier>> CODEC = Suppliers.memoize(() ->
-            RecordCodecBuilder.create(i ->
-                    codecStart(i).apply(i, LeatherHideModifier::new)));
+    public static final MapCodec<LeatherHideModifier> CODEC = RecordCodecBuilder.mapCodec(i ->
+            codecStart(i).apply(i, LeatherHideModifier::new)
+    );
 
     protected LeatherHideModifier(LootItemCondition[] conditionsIn) {
         super(conditionsIn);
@@ -39,7 +37,7 @@ public class LeatherHideModifier extends LootModifier {
     }
 
     @Override
-    public Codec<? extends IGlobalLootModifier> codec() {
-        return CODEC.get();
+    public MapCodec<? extends IGlobalLootModifier> codec() {
+        return CODEC;
     }
 }

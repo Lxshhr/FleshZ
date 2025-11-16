@@ -6,12 +6,12 @@ import net.lxshh.fleshz.common.recipes.ModRecipes;
 import net.lxshh.fleshz.common.recipes.RackRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -34,19 +34,18 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-@SuppressWarnings("deprecation")
 public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
-    public static final VoxelShape SHAPE_NORTH = Block.box(0, 13, 13, 16, 16, 16);
-    public static final VoxelShape SHAPE_SOUTH = Block.box(0, 13, 0, 16, 16, 3);;
-    public static final VoxelShape SHAPE_WEST = Block.box(13, 13, 0, 16, 16, 16);;
-    public static final VoxelShape SHAPE_EAST = Block.box(0, 13, 0, 3, 16, 16); ;
+    public static final VoxelShape SHAPE_NORTH = box(0, 13, 13, 16, 16, 16);
+    public static final VoxelShape SHAPE_SOUTH = box(0, 13, 0, 16, 16, 3);;
+    public static final VoxelShape SHAPE_WEST = box(13, 13, 0, 16, 16, 16);;
+    public static final VoxelShape SHAPE_EAST = box(0, 13, 0, 3, 16, 16); ;
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    public WoodRackBlock(Properties pProperties) {
-        super(pProperties);
-        registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
+    public WoodRackBlock(Properties properties) {
+        super(properties);
+        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
     }
 
     @Override
@@ -60,7 +59,7 @@ public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterlogg
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         BlockEntity entity = level.getBlockEntity(pos);
 
         if (entity instanceof WoodRackEntity woodRackEntity) {
@@ -94,16 +93,15 @@ public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterlogg
     }
 
     private boolean canPlaceItemOnRack(ItemStack stack, Level level) {
-        SimpleContainer container = new SimpleContainer(stack);
-        Optional<RackRecipe> recipe = level.getRecipeManager()
-                .getRecipeFor(ModRecipes.RACK_TYPE.get(), container, level);
+        SingleRecipeInput input = new SingleRecipeInput(stack);
+        Optional<RecipeHolder<RackRecipe>> recipe = level.getRecipeManager()
+                .getRecipeFor(ModRecipes.RACK_TYPE.get(), input, level);
         return recipe.isPresent();
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
-            case NORTH -> SHAPE_NORTH;
             case SOUTH -> SHAPE_SOUTH;
             case WEST -> SHAPE_WEST;
             case EAST -> SHAPE_EAST;
