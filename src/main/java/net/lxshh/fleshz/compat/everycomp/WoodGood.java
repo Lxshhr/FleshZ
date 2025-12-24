@@ -33,9 +33,8 @@ public class WoodGood extends SimpleModule {
                         ModBlocks.OAK_WOOD_RACK, () -> VanillaWoodTypes.OAK,
                         w -> new WoodRackBlock(BlockBehaviour.Properties.copy(w.planks).strength(0.25F, 0.5F).noOcclusion())
                 )
-                .requiresChildren("planks")
+                .requiresChildren("slab")
                 .setTabKey(CreativeModeTabs.BUILDING_BLOCKS)
-                .addTexture(modRes("block/oak_wood_rack"))
                 .addTag(ModTags.Items.RACKS, Registries.ITEM)
                 .addTag(ModTags.Blocks.RACKS, Registries.BLOCK)
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
