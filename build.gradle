@@ -122,7 +122,8 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_description        : mod_description,
             emi_version_range      : "[${libs.versions.emi.get()},)",
             jei_version_range      : "[${libs.versions.jei.get()},)",
-            ec_version_range       : "[${libs.versions.ec.get()},)"
+            ec_version_range       : "[${libs.versions.ec.range.get()},)",
+            moonlight_version_range : "[${libs.versions.moonlight.range.get()},)"
     ]
     inputs.properties replaceProperties
     expand replaceProperties

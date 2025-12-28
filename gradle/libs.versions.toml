@@ -14,6 +14,10 @@ jade = "15.10.0+neoforge"
 ec = "7116050"
 moonlight = "6982362"
 
+# Curve Versions #
+ec_range = "1.21-2.11.10"
+moonlight_range = "1.21-2.23.7"
+
 [libraries]
 jei-common-api = { module = "mezz.jei:jei-1.21.1-common-api", version.ref = "jei" }
 jei-neoforge-api = { module = "mezz.jei:jei-1.21.1-neoforge-api", version.ref = "jei" }
