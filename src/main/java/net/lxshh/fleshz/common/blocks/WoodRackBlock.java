@@ -34,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
+@SuppressWarnings("deprecated")
 public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
     public static final VoxelShape SHAPE_NORTH = box(0, 13, 13, 16, 16, 16);
     public static final VoxelShape SHAPE_SOUTH = box(0, 13, 0, 16, 16, 3);;

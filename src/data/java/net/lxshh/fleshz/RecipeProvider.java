@@ -1,6 +1,5 @@
-package net.lxshh.fleshz.datagen;
+package net.lxshh.fleshz;
 
-import net.lxshh.fleshz.FleshZ;
 import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.lxshh.fleshz.common.items.ModItems;
 import net.minecraft.core.HolderLookup;
@@ -13,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -63,7 +61,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
     }
 
     private ResourceLocation modLoc(String name) {
-        return ResourceLocation.fromNamespaceAndPath(FleshZ.MOD_ID, name);
+        return FleshZ.loc(name);
     }
 
     private void generateWoodRackRecipe(RecipeOutput output, Block block, Item slabItem) {

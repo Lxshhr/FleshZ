@@ -27,7 +27,7 @@ public class JeiIntegration implements IModPlugin {
 
     @Override
     public ResourceLocation getPluginUid() {
-        return ResourceLocation.fromNamespaceAndPath(FleshZ.MOD_ID, "jei");
+        return FleshZ.loc("jei");
     }
 
     @Override

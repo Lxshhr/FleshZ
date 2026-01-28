@@ -15,7 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 public class DryingCategory extends AbstractRecipeCategory<RackRecipe> {
-    public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(FleshZ.MOD_ID, "rack_drying");
+    public static final ResourceLocation UID = FleshZ.loc("rack_drying");
 
     public static final RecipeType<RackRecipe> DRYING_RACK_TYPE = new RecipeType<>(UID, RackRecipe.class);
 

@@ -20,5 +20,5 @@ public class ModRecipes {
             SERIALIZERS.register("rack_drying", RackRecipe.Serializer::new);
 
     public static final Supplier<RecipeType<RackRecipe>> RACK_TYPE =
-            TYPES.register("rack_drying", () -> RecipeType.simple(ResourceLocation.fromNamespaceAndPath(FleshZ.MOD_ID, "rack_drying")));
+            TYPES.register("rack_drying", () -> RecipeType.simple(FleshZ.loc("rack_drying")));
 }

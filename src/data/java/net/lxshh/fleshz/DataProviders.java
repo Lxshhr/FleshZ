@@ -1,6 +1,5 @@
-package net.lxshh.fleshz.datagen;
+package net.lxshh.fleshz;
 
-import net.lxshh.fleshz.FleshZ;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -15,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = FleshZ.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = FleshZ.MOD_ID)
 public class DataProviders {
 
     @SubscribeEvent

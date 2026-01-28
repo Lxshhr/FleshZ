@@ -1,4 +1,4 @@
-package net.lxshh.fleshz.datagen;
+package net.lxshh.fleshz;
 
 import net.lxshh.fleshz.common.ModTags;
 import net.lxshh.fleshz.common.blocks.ModBlocks;

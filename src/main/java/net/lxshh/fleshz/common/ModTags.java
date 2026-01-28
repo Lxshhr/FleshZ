@@ -12,14 +12,14 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> RACKS = BlockTags.create(ResourceLocation.fromNamespaceAndPath(FleshZ.MOD_ID, "racks"));
+        public static final TagKey<Block> RACKS = BlockTags.create(FleshZ.loc("racks"));
     }
 
     public static class Items {
-        public static final TagKey<Item> RACKS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(FleshZ.MOD_ID, "racks"));
+        public static final TagKey<Item> RACKS = ItemTags.create(FleshZ.loc("racks"));
     }
 
     public static class Entities {
-        public static final TagKey<EntityType<?>> LEATHER_TO_HIDE = TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(FleshZ.MOD_ID, "leather_to_hide"));
+        public static final TagKey<EntityType<?>> LEATHER_TO_HIDE = TagKey.create(Registries.ENTITY_TYPE, FleshZ.loc("leather_to_hide"));
     }
 }

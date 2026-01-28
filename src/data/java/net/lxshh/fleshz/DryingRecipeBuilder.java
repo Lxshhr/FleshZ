@@ -1,4 +1,4 @@
-package net.lxshh.fleshz.datagen;
+package net.lxshh.fleshz;
 
 import net.lxshh.fleshz.common.recipes.RackRecipe;
 import net.minecraft.advancements.Criterion;
@@ -12,8 +12,6 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.Nullable;
 
-import javax.management.relation.RelationSupport;
-import java.sql.ResultSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

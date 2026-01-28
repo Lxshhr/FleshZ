@@ -7,6 +7,7 @@ import net.lxshh.fleshz.common.items.ModItems;
 import net.lxshh.fleshz.common.loot_modifiers.ModLootModifiers;
 import net.lxshh.fleshz.common.recipes.ModRecipes;
 import net.lxshh.fleshz.compat.everycomp.WoodGoodIntegration;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModList;
@@ -70,5 +71,9 @@ public class FleshZ
         } catch (Exception e) {
             LOGGER.error("Failed to start EveryComp module", e);
         }
+    }
+
+    public static ResourceLocation loc(String name) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 }

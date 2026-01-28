@@ -1,6 +1,5 @@
-package net.lxshh.fleshz.datagen;
+package net.lxshh.fleshz;
 
-import net.lxshh.fleshz.FleshZ;
 import net.lxshh.fleshz.common.items.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
