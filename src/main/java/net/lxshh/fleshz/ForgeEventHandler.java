@@ -7,10 +7,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.MissingMappingsEvent;
-/*
-* This solves the issue of the missing wood rack
-* Temporary, to remove in the next versions
-* */
+
+/**
+ * Will be removed in 0.0.8
+ * This was a temporary solution to replace the removed wood_rack with an Oak One
+ */
+@Deprecated
 @Mod.EventBusSubscriber(modid = FleshZ.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEventHandler {
 
