@@ -81,7 +81,7 @@ public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterlogg
             } else {
                 if (!level.isClientSide) {
                     ItemStack removalStack = stack.split(1);
-                    if (player.getInventory().add(removalStack)) {
+                    if (!player.getInventory().add(removalStack)) {
                         player.drop(removalStack, false);
                     }
                 }
