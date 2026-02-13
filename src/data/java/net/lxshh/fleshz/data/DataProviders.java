@@ -1,5 +1,6 @@
-package net.lxshh.fleshz;
+package net.lxshh.fleshz.data;
 
+import net.lxshh.fleshz.FleshZ;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

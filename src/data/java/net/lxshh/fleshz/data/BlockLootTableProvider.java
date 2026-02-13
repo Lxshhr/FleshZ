@@ -1,4 +1,4 @@
-package net.lxshh.fleshz;
+package net.lxshh.fleshz.data;
 
 import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.minecraft.core.HolderLookup;

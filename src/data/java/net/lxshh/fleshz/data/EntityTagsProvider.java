@@ -1,5 +1,6 @@
-package net.lxshh.fleshz;
+package net.lxshh.fleshz.data;
 
+import net.lxshh.fleshz.FleshZ;
 import net.lxshh.fleshz.common.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
