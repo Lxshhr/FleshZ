@@ -34,12 +34,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-@SuppressWarnings("deprecated")
+@SuppressWarnings("deprecation")
 public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
-    public static final VoxelShape SHAPE_NORTH = box(0, 13, 13, 16, 16, 16);
-    public static final VoxelShape SHAPE_SOUTH = box(0, 13, 0, 16, 16, 3);;
-    public static final VoxelShape SHAPE_WEST = box(13, 13, 0, 16, 16, 16);;
-    public static final VoxelShape SHAPE_EAST = box(0, 13, 0, 3, 16, 16); ;
+    public static final VoxelShape SHAPE_NORTH = box(0, 0, 13, 16, 16, 16);
+    public static final VoxelShape SHAPE_SOUTH = box(0, 0, 0, 16, 16, 3);;
+    public static final VoxelShape SHAPE_WEST = box(13, 0, 0, 16, 16, 16);;
+    public static final VoxelShape SHAPE_EAST = box(0, 0, 0, 3, 16, 16); ;
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
