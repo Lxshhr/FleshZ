@@ -6,6 +6,9 @@ import net.lxshh.fleshz.common.recipes.ModRecipes;
 import net.lxshh.fleshz.common.recipes.RackRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
@@ -28,6 +31,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -69,12 +73,10 @@ public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterlogg
                 ItemStack heldItem = player.getMainHandItem();
                 if (!heldItem.isEmpty() && canPlaceItemOnRack(heldItem, level)) {
                     if (!level.isClientSide) {
-                        if (player.isCreative()) {
-                            woodRackEntity.setStack(heldItem.copy());
-                        } else {
-                            woodRackEntity.setStack(heldItem.split(1));
-                        }
+                        ItemStack toPlace = player.isCreative() ? heldItem.copy() : heldItem.split(1);
+                        woodRackEntity.setStack(toPlace);
                     }
+                    playSound(level, pos, state, SoundEvents.ITEM_FRAME_PLACE);
                     return InteractionResult.sidedSuccess(level.isClientSide);
                 }
                 return InteractionResult.CONSUME;
@@ -85,12 +87,27 @@ public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterlogg
                         player.drop(removalStack, false);
                     }
                 }
+                playSound(level, pos, state, SoundEvents.ITEM_FRAME_REMOVE_ITEM);
                 woodRackEntity.clear();
             }
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
 
         return InteractionResult.PASS;
+    }
+
+    private void playSound(Level level, BlockPos pos, BlockState state, SoundEvent sound) {
+        Direction facing = state.getValue(FACING).getOpposite();
+        Vec3 soundPos = getSoundPosition(pos, facing);
+
+        level.playSound(null, soundPos.x, soundPos.y, soundPos.z, sound, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+    }
+
+    private Vec3 getSoundPosition(BlockPos pos, Direction facing) {
+        double x = pos.getX() + 0.5 + (facing.getStepX() * 0.5);
+        double y = pos.getY() + 0.5 + (facing.getStepY() * 0.5);
+        double z = pos.getZ() + 0.5 + (facing.getStepZ() * 0.5);
+        return new Vec3(x, y, z);
     }
 
     private boolean canPlaceItemOnRack(ItemStack stack, Level level) {
@@ -103,7 +120,6 @@ public class WoodRackBlock extends Block implements EntityBlock, SimpleWaterlogg
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
-            case NORTH -> SHAPE_NORTH;
             case SOUTH -> SHAPE_SOUTH;
             case WEST -> SHAPE_WEST;
             case EAST -> SHAPE_EAST;
