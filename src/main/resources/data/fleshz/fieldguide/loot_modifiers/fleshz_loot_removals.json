@@ -1,0 +1,71 @@
+{
+  "replace": false,
+  "removals": [
+    {
+      "entry": "minecraft:cow",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "minecraft:donkey",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "minecraft:hoglin",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "minecraft:horse",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "minecraft:mooshroom",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "minecraft:llama",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "minecraft:mule",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "minecraft:trader_llama",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "naturalist:boar",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "naturalist:elephant",
+      "values": [
+        "minecraft:leather"
+      ]
+    },
+    {
+      "entry": "naturalist:rhino",
+      "values": [
+        "minecraft:leather"
+      ]
+    }
+  ]
+}

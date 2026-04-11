@@ -1,0 +1,71 @@
+{
+  "replace": false,
+  "additions": [
+    {
+      "entry": "minecraft:cow",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "minecraft:donkey",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "minecraft:hoglin",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "minecraft:horse",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "minecraft:mooshroom",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "minecraft:llama",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "minecraft:mule",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "minecraft:trader_llama",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "naturalist:boar",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "naturalist:elephant",
+      "values": [
+        "fleshz:hide"
+      ]
+    },
+    {
+      "entry": "naturalist:rhino",
+      "values": [
+        "fleshz:hide"
+      ]
+    }
+  ]
+}
