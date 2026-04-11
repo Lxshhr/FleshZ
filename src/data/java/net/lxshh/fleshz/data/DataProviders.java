@@ -44,5 +44,7 @@ public class DataProviders {
 
         generator.addProvider(event.includeClient(), new BlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ItemModelProvider(packOutput, existingFileHelper));
+
+        generator.addProvider(event.includeServer(), new FieldGuidLootEntryProvider(packOutput));
     }
 }

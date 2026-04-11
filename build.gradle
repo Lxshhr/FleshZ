@@ -132,6 +132,9 @@ dependencies {
     // EveryCompat
     compileOnly "curse.maven:every-compat-628539:${everycompat_version}"
     compileOnly "curse.maven:selene-499980:${moonlight_version}"
+
+    // Field Guide
+    implementation "curse.maven:field-guide-1470590:${field_guide_version}"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
