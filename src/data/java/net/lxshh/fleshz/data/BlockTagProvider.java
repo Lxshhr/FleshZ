@@ -1,5 +1,6 @@
 package net.lxshh.fleshz.data;
 
+import net.lxshh.fleshz.FleshZ;
 import net.lxshh.fleshz.common.ModTags;
 import net.lxshh.fleshz.common.blocks.ModBlocks;
 import net.minecraft.core.HolderLookup;
@@ -12,8 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class BlockTagProvider extends BlockTagsProvider {
-    public BlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, modId, existingFileHelper);
+    public BlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, FleshZ.MOD_ID, existingFileHelper);
     }
 
     @Override

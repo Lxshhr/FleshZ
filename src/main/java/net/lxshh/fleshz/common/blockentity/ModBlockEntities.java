@@ -21,6 +21,8 @@ public class ModBlockEntities {
                     ModBlocks.CHERRY_WOOD_RACK.get(),
                     ModBlocks.DARK_OAK_WOOD_RACK.get(),
                     ModBlocks.MANGROVE_WOOD_RACK.get(),
-                    ModBlocks.BAMBOO_WOOD_RACK.get()
+                    ModBlocks.BAMBOO_WOOD_RACK.get(),
+                    ModBlocks.CRIMSON_WOOD_RACK.get(),
+                    ModBlocks.WARPED_WOOD_RACK.get()
             ).build(null));
 }

@@ -26,6 +26,8 @@ public class BlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.MANGROVE_WOOD_RACK.get());
         this.dropSelf(ModBlocks.CHERRY_WOOD_RACK.get());
         this.dropSelf(ModBlocks.BAMBOO_WOOD_RACK.get());
+        this.dropSelf(ModBlocks.CRIMSON_WOOD_RACK.get());
+        this.dropSelf(ModBlocks.WARPED_WOOD_RACK.get());
     }
 
     @Override

@@ -32,6 +32,8 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
         generateWoodRackRecipe(output, ModBlocks.DARK_OAK_WOOD_RACK.get(), Items.DARK_OAK_SLAB);
         generateWoodRackRecipe(output, ModBlocks.MANGROVE_WOOD_RACK.get(), Items.MANGROVE_SLAB);
         generateWoodRackRecipe(output, ModBlocks.BAMBOO_WOOD_RACK.get(), Items.BAMBOO_SLAB);
+        generateWoodRackRecipe(output, ModBlocks.CRIMSON_WOOD_RACK.get(), Items.CRIMSON_SLAB);
+        generateWoodRackRecipe(output, ModBlocks.WARPED_WOOD_RACK.get(), Items.WARPED_SLAB);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PREPARED_HIDE.get())
                 .requires(Items.SUGAR, 3)

@@ -37,7 +37,7 @@ public class DataProviders {
                 )
         );
 
-        BlockTagProvider blockTagProvider = new BlockTagProvider(packOutput, lookupProvider, FleshZ.MOD_ID, existingFileHelper);
+        BlockTagProvider blockTagProvider = new BlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagProvider);
         generator.addProvider(event.includeServer(), new ItemTagProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter()));
         generator.addProvider(event.includeServer(), new EntityTagsProvider(packOutput, lookupProvider, existingFileHelper));

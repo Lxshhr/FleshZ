@@ -24,6 +24,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> DARK_OAK_WOOD_RACK = register("dark_oak_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
     public static final DeferredBlock<Block> MANGROVE_WOOD_RACK = register("mangrove_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
     public static final DeferredBlock<Block> BAMBOO_WOOD_RACK = register("bamboo_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
+    public static final DeferredBlock<Block> CRIMSON_WOOD_RACK = register("crimson_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
+    public static final DeferredBlock<Block> WARPED_WOOD_RACK = register("warped_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
 
     private static <T extends Block> DeferredBlock<T> register(String name, Supplier<T> blockFactory) {
         DeferredBlock<T> block = BLOCKS.register(name, blockFactory);
