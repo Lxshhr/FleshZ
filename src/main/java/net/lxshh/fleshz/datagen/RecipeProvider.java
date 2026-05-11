@@ -27,6 +27,8 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
         generateWoodRackRecipe(consumer, ModBlocks.DARK_OAK_WOOD_RACK.get(), Items.DARK_OAK_SLAB);
         generateWoodRackRecipe(consumer, ModBlocks.MANGROVE_WOOD_RACK.get(), Items.MANGROVE_SLAB);
         generateWoodRackRecipe(consumer, ModBlocks.BAMBOO_WOOD_RACK.get(), Items.BAMBOO_SLAB);
+        generateWoodRackRecipe(consumer, ModBlocks.CRIMSON_WOOD_RACK.get(), Items.CRIMSON_SLAB);
+        generateWoodRackRecipe(consumer, ModBlocks.WARPED_WOOD_RACK.get(), Items.WARPED_SLAB);
     }
 
     private void generateWoodRackRecipe(Consumer<FinishedRecipe> consumer, Block block, Item slabItem) {

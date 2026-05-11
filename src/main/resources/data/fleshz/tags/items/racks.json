@@ -9,6 +9,8 @@
         "fleshz:jungle_wood_rack",
         "fleshz:mangrove_wood_rack",
         "fleshz:spruce_wood_rack",
-        "fleshz:oak_wood_rack"
+        "fleshz:oak_wood_rack",
+        "fleshz:warped_wood_rack",
+        "fleshz:crimson_wood_rack"
     ]
 }

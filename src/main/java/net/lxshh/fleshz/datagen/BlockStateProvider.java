@@ -25,6 +25,8 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
         woodRack(ModBlocks.DARK_OAK_WOOD_RACK.get(), "dark_oak");
         woodRack(ModBlocks.MANGROVE_WOOD_RACK.get(), "mangrove");
         woodRack(ModBlocks.BAMBOO_WOOD_RACK.get(), "bamboo");
+        woodRack(ModBlocks.CRIMSON_WOOD_RACK.get(), "crimson");
+        woodRack(ModBlocks.WARPED_WOOD_RACK.get(), "warped");
     }
 
     private void woodRack(Block block, String woodType) {

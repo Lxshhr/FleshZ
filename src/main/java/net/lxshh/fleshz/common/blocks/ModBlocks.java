@@ -28,6 +28,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DARK_OAK_WOOD_RACK = register("dark_oak_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
     public static final RegistryObject<Block> MANGROVE_WOOD_RACK = register("mangrove_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
     public static final RegistryObject<Block> BAMBOO_WOOD_RACK = register("bamboo_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
+    public static final RegistryObject<Block> CRIMSON_WOOD_RACK = register("crimson_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
+    public static final RegistryObject<Block> WARPED_WOOD_RACK = register("warped_wood_rack", () -> new WoodRackBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_PLANKS).noOcclusion().strength(0.25F, 0.5F)));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockFactory) {
         RegistryObject<T> block = BLOCKS.register(name, blockFactory);

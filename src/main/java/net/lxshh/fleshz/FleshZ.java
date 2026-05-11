@@ -60,6 +60,8 @@ public class FleshZ
             event.accept(ModBlocks.DARK_OAK_WOOD_RACK.get());
             event.accept(ModBlocks.MANGROVE_WOOD_RACK.get());
             event.accept(ModBlocks.BAMBOO_WOOD_RACK.get());
+            event.accept(ModBlocks.CRIMSON_WOOD_RACK.get());
+            event.accept(ModBlocks.WARPED_WOOD_RACK.get());
         }
     }
 
