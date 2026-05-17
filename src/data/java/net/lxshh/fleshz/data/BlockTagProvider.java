@@ -28,7 +28,9 @@ public class BlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MANGROVE_WOOD_RACK.get())
                 .add(ModBlocks.BAMBOO_WOOD_RACK.get())
                 .add(ModBlocks.CHERRY_WOOD_RACK.get())
-                .add(ModBlocks.JUNGLE_WOOD_RACK.get());
+                .add(ModBlocks.JUNGLE_WOOD_RACK.get())
+                .add(ModBlocks.CRIMSON_WOOD_RACK.get())
+                .add(ModBlocks.WARPED_WOOD_RACK.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.ACACIA_WOOD_RACK.get())
@@ -39,6 +41,8 @@ public class BlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MANGROVE_WOOD_RACK.get())
                 .add(ModBlocks.BAMBOO_WOOD_RACK.get())
                 .add(ModBlocks.CHERRY_WOOD_RACK.get())
-                .add(ModBlocks.JUNGLE_WOOD_RACK.get());
+                .add(ModBlocks.JUNGLE_WOOD_RACK.get())
+                .add(ModBlocks.CRIMSON_WOOD_RACK.get())
+                .add(ModBlocks.WARPED_WOOD_RACK.get());
     }
 }

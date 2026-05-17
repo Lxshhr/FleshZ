@@ -26,7 +26,9 @@ public class ItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.MANGROVE_WOOD_RACK.asItem())
                 .add(ModBlocks.BAMBOO_WOOD_RACK.asItem())
                 .add(ModBlocks.CHERRY_WOOD_RACK.asItem())
-                .add(ModBlocks.JUNGLE_WOOD_RACK.asItem());
+                .add(ModBlocks.JUNGLE_WOOD_RACK.asItem())
+                .add(ModBlocks.CRIMSON_WOOD_RACK.asItem())
+                .add(ModBlocks.WARPED_WOOD_RACK.asItem());
     }
 
     @Override
